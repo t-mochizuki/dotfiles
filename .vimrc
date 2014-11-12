@@ -2,7 +2,6 @@
 "--------------------------------------------------
 " tmp " {{{
 "--------------------------------------------------
-
 " }}}
 "--------------------------------------------------
 
@@ -20,11 +19,40 @@ set ambiwidth=double
 set startofline
 set history=50
 set keywordprg=:help
+nnoremap <ESC><ESC> :nohlsearch<CR>
+nmap <C-p> :cp<CR>
+nmap <C-n> :cn<CR>
+nnoremap <C-L><C-L> :ls<CR>
+nnoremap <C-L><C-R> :dis<CR>
+nnoremap <C-L><C-K> :map<CR>
+nnoremap <C-L><C-M> :marks<CR>
+nnoremap <C-L><C-J> :jumps<CR>
+nnoremap <C-L><C-H> :his<CR>
+nnoremap <C-L><C-U> :undolist<CR>
+" }}}
+"--------------------------------------------------
+
+"--------------------------------------------------
+" Jump " {{{
+"
+" :help jump-motions
+" :help jumps
+" :help jumplist
+"
+" CTRL-O, CTRL-I
+"
+"--------------------------------------------------
 " }}}
 "--------------------------------------------------
 
 "--------------------------------------------------
 " Folding " {{{
+"
+" :help folding
+"
+" zR, zM, za, zA, zo, zc, zO, zC
+" zj, zk, [z, ]z
+"
 "--------------------------------------------------
 set foldmethod=marker
 " }}}
@@ -35,6 +63,7 @@ set foldmethod=marker
 "
 " :help ins-completion
 " :help complete-functions
+" :help compl-omni-filetypes
 "
 " current buffer  => ^N
 " user definition => ^X^U
@@ -52,6 +81,15 @@ set dictionary=
 set wildmenu
 set wildmode=longest:full,full
 set wildchar=<Tab>
+" let g:rubycomplete_buffer_loading = 1
+" let g:rubycomplete_classes_in_global = 1
+" let g:rubycomplete_rails = 1
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+endif
 " }}}
 "--------------------------------------------------
 
@@ -83,13 +121,15 @@ set notitle
 set list
 set listchars=tab:>.,trail:_,eol:?,extends:>,precedes:<,nbsp:%
 set cursorline
-set noshowcmd
+set showcmd
 set scrolloff=999
 " }}}
 "--------------------------------------------------
 
 "--------------------------------------------------
 " Edit " {{{
+"
+" :help insert-index
 "
 " CTRL-H, CTRL-D, CTRL-U, CTRL-W
 " CTRL-G CTRL-J, CTRL-G CTRL-K
@@ -98,13 +138,11 @@ set scrolloff=999
 "--------------------------------------------------
 set backspace=indent,eol,start
 set virtualedit=block
-
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-d> <Del>
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
-
 function! CleverTab()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
     return "\<Tab>"
@@ -148,61 +186,54 @@ set statusline+=[LINE=%l/%L][COLUMN=%c/%{col('$')-1}][%p%%]
 " }}}
 "--------------------------------------------------
 
-nnoremap [gtags] <Nop>
-nmap ,r [gtags]
-nmap [gtags] :Gtags -r<CR>
+"--------------------------------------------------
+" Window " {{{
+"
+" CTRL-W s : Split current window in two
+" CTRL-W v : Split vertically current window in two
+" CTRL-W c : Close current window
+" CTRL-W o : All other windows are closed
+"
+"--------------------------------------------------
+" }}}
+"--------------------------------------------------
 
-nnoremap [close] <Nop>
-nmap ,q [close]
-nmap [close] :cclose<CR>
-
-" nmap <C-p> :cp<CR>
-" nmap <C-n> :cn<CR>
-" map ZZ :wq!<CR>
-" nmap <C-C><C-P> :bp<CR>
-" nmap <C-C><C-N> :bn<CR>
-" nmap <C-C><C-D> :bd<CR>
-" nmap <C-C><C-N> :new<CR>
-" nmap <C-L><C-L> :ls<CR>
-" nmap <C-L><C-R> :dis<CR>
-" nmap <C-L><C-K> :map<CR>
-" nmap <C-L><C-M> :marks<CR>
-" nmap <C-L><C-J> :jumps<CR>
-" nmap <C-L><C-H> :his<CR>
-" nmap <C-L><C-U> :undolist<CR>
-" nmap <C-W><C-A> :all<CR>
+"--------------------------------------------------
+" Register " {{{
+"
+" :help registers
+" :help display
+" :help yank
+" ;help put
+"
+" INSERT : CTRL-R *
+" NORMAL : ["x]yy, ["x]P
+" COMMAND : @"
+"
+"--------------------------------------------------
+set clipboard+=unnamed
+" }}}
+"--------------------------------------------------
 
 "--------------------------------------------------
 " Autocmd group " {{{
+"
+" :help autocommand
+"
 "--------------------------------------------------
 augroup vimrc
   autocmd!
-  " autocmd InsertLeave * setlocal nocursorline
-  " autocmd InsertEnter * setlocal cursorline
-  " autocmd InsertLeave * highlight StatusLine ctermfg=Green
-  " autocmd InsertEnter * highlight StatusLine ctermfg=Black
-  autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd filetype c,cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  " augroup currentdir
-  "   autocmd!
-  "   autocmd BufEnter * lcd %:p:h
-  " augroup END
-
-  " augroup rbsyntaxcheck
-  "   autocmd!
-  "   autocmd BufWrite *.rb w !ruby -c
-  " augroup END
-  "
-  " autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-  " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  " autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
 augroup END
 " }}}
 "--------------------------------------------------
 
+" :help feature-list
 if has('macunix')
   source ~/.vim/mac.vimrc
 endif
+
+" Advance
+" :help vimgrep
+" :help mark-motions
+" :help compiler
