@@ -16,19 +16,25 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'L9'
 
 "--------------------------------------------------
-" Interface
+" Completion
 "--------------------------------------------------
-Plugin 'ctrlp.vim'
+Plugin 'AutoComplPop'
 
 "--------------------------------------------------
 " Cursor
 "--------------------------------------------------
+Plugin 'thinca/vim-poslist'
 Plugin 'tmhedberg/matchit'
 
 "--------------------------------------------------
 " Visual selection
 "--------------------------------------------------
 Plugin 'terryma/vim-expand-region'
+
+"--------------------------------------------------
+" Star
+"--------------------------------------------------
+Plugin 'thinca/vim-visualstar'
 
 "--------------------------------------------------
 " Text Object
@@ -67,11 +73,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
 
 "--------------------------------------------------
-" integrate Git with Vim
-"--------------------------------------------------
-Plugin 'tpope/vim-fugitive'
-
-"--------------------------------------------------
 " integrate ag with Vim
 "--------------------------------------------------
 Plugin 'rking/ag.vim'
@@ -94,6 +95,12 @@ Plugin 'tpope/vim-rails'
 Plugin 'fatih/vim-go'
 
 "--------------------------------------------------
+" JavaScript
+"--------------------------------------------------
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+
+"--------------------------------------------------
 " Reference
 "--------------------------------------------------
 Plugin 'ref.vim'
@@ -102,6 +109,10 @@ Plugin 'ref.vim'
 " Utility
 "--------------------------------------------------
 Plugin 'tyru/capture.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kannokanno/previm'
+Plugin 'tyru/open-browser.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -111,8 +122,16 @@ syntax on
 " Gtags
 "--------------------------------------------------
 nnoremap [gtags] <Nop>
-nmap ,r [gtags]
-nmap [gtags] :Gtags -r<CR>
+nmap ,g [gtags]
+nmap [gtags] :Gtags<CR>
+nmap [gtags]r :Gtags -r<CR>
+
+"--------------------------------------------------
+" Poslist
+"--------------------------------------------------
+nmap <C-o> <Plug>(poslist-prev-pos)
+nmap <C-i> <Plug>(poslist-next-pos)
+let g:poslist_histsize = 1000
 
 "--------------------------------------------------
 " Tagbar
@@ -121,11 +140,15 @@ nnoremap <Space>t :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_sort = 0
 
-"--------------------------------------------------
-" CtrlP
-"--------------------------------------------------
-let g:ctrlp_map = '<c-x><c-b>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:tagbar_type_javascript = {
+    \ 'ctagstype' : 'js',
+    \ 'kinds'     : [
+        \ 'o:objects',
+        \ 'f:functions',
+        \ 'a:arrays',
+        \ 's:strings'
+    \ ]
+\ }
 
 "--------------------------------------------------
 " Ag
@@ -145,17 +168,3 @@ endif
 if $GOPATH != ''
   let g:go_bin_path = expand("$GOPATH/bin")
 endif
-
-"--------------------------------------------------
-" Fugitive
-"--------------------------------------------------
-nnoremap [git] <Nop>
-nmap ,g [git]
-nnoremap [git]d :<C-u>Gdiff HEAD<Enter>
-nnoremap [git]s :<C-u>Gstatus<Enter>
-nnoremap [git]l :<C-u>Glog<Enter>
-nnoremap [git]a :<C-u>Gwrite<Enter>
-nnoremap [git]c :<C-u>Gcommit<Enter>
-nnoremap [git]C :<C-u>Git commit --amend<Enter>
-nnoremap [git]b :<C-u>Gblame<Enter>
-
