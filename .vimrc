@@ -22,6 +22,8 @@ set keywordprg=:help
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nmap <C-p> :cp<CR>
 nmap <C-n> :cn<CR>
+nmap <C-f> :bp<CR>
+nmap <C-b> :bn<CR>
 nnoremap <C-L><C-L> :ls<CR>
 nnoremap <C-L><C-R> :dis<CR>
 nnoremap <C-L><C-K> :map<CR>
@@ -74,7 +76,7 @@ set foldmethod=marker
 "
 "--------------------------------------------------
 set completeopt=menu,preview
-set complete=.,k,i,t
+set complete=.,w,b,u,t,i,k
 set omnifunc=
 set completefunc=
 set dictionary=
@@ -114,7 +116,7 @@ set hlsearch
 "--------------------------------------------------
 " Look " {{{
 "--------------------------------------------------
-colorscheme torte
+colorscheme default
 set number relativenumber
 set ruler
 set notitle
@@ -132,8 +134,7 @@ set scrolloff=999
 " :help insert-index
 "
 " CTRL-H, CTRL-D, CTRL-U, CTRL-W
-" CTRL-G CTRL-J, CTRL-G CTRL-K
-" CTRL-C, CTRL-G u
+" CTRL-G CTRL-J, CTRL-G CTRL-K, CTRL-G u
 "
 "--------------------------------------------------
 set backspace=indent,eol,start
