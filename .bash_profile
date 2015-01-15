@@ -5,9 +5,6 @@ export SHELL=/usr/local/bin/bash
 
 # PS1='\W \$ '
 
-alias ls="ls -al"
-alias info="info --vi-keys"
-
 if [ -x "`which rbenv`" ]; then
   alias mgem="rbenv exec mgem"
   alias gem="rbenv exec gem"
