@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " All folding is opened by zR
 "--------------------------------------------------
 " tmp " {{{
