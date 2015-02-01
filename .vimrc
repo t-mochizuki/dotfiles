@@ -224,8 +224,9 @@ set clipboard+=unnamed
 "--------------------------------------------------
 augroup vimrc
   autocmd!
-  autocmd filetype c,cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 augroup END
+
+autocmd vimrc FileType c,cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 " }}}
 "--------------------------------------------------
 
