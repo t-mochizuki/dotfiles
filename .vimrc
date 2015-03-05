@@ -334,6 +334,12 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
 "--------------------------------------------------
+" Scala
+"--------------------------------------------------
+Plugin 'derekwyatt/vim-scala'
+Plugin 'ktvoelker/sbt-vim'
+
+"--------------------------------------------------
 " Reference
 "--------------------------------------------------
 Plugin 'ref.vim'
