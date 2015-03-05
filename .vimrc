@@ -177,7 +177,6 @@ set cmdheight=2
 set laststatus=2
 set statusline=[%n]
 set statusline+=%<%F
-set statusline+=%m
 set statusline+=%r
 set statusline+=%h
 set statusline+=%w
@@ -185,6 +184,7 @@ set statusline+=[%{&fileformat}]
 set statusline+=[%{has('multi_byte')&&\&fileencoding!=''?&fileencoding:&encoding}]
 set statusline+=%y
 set statusline+=[LINE=%l/%L][COLUMN=%c/%{col('$')-1}][%p%%]
+set statusline+=%m
 " }}}
 "--------------------------------------------------
 
