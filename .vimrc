@@ -118,7 +118,7 @@ set hlsearch
 " Look " {{{
 "--------------------------------------------------
 colorscheme default
-set number relativenumber
+set relativenumber
 set ruler
 set notitle
 set list
