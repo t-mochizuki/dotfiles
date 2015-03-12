@@ -352,6 +352,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
+" Plugin 'justinmk/vim-dirvish'
 
 call vundle#end()
 filetype plugin indent on
@@ -368,8 +369,8 @@ nmap [gtags]r :Gtags -r<CR>
 "--------------------------------------------------
 " Poslist
 "--------------------------------------------------
-nmap <C-o> <Plug>(poslist-prev-pos)
-nmap <C-i> <Plug>(poslist-next-pos)
+nmap <C-i> <Plug>(poslist-prev-pos)
+nmap <C-o> <Plug>(poslist-next-pos)
 let g:poslist_histsize = 1000
 
 "--------------------------------------------------
