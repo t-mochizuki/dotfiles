@@ -25,13 +25,14 @@ nmap <C-p> :cp<CR>
 nmap <C-n> :cn<CR>
 nmap <C-f> :bp<CR>
 nmap <C-b> :bn<CR>
-nnoremap <C-L><C-L> :ls<CR>
+nnoremap <C-L><C-L> :ls<CR>:b 
 nnoremap <C-L><C-R> :dis<CR>
 nnoremap <C-L><C-K> :map<CR>
 nnoremap <C-L><C-M> :marks<CR>
 nnoremap <C-L><C-J> :jumps<CR>
 nnoremap <C-L><C-H> :his<CR>
 nnoremap <C-L><C-U> :undolist<CR>
+nnoremap <C-L><C-E> :edit %:p:h<CR>
 " }}}
 "--------------------------------------------------
 
