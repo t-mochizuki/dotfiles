@@ -146,6 +146,11 @@ inoremap <C-b> <Left>
 inoremap <C-d> <Del>
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <C-d> <Del>
+cnoremap <C-a> <HOME>
+cnoremap <C-e> <END>
 function! CleverTab()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
     return "\<Tab>"
