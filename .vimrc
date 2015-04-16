@@ -356,6 +356,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
+Plugin 'kana/vim-smartinput'
 " Plugin 'justinmk/vim-dirvish'
 
 call vundle#end()
