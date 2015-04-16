@@ -416,6 +416,13 @@ endif
 "--------------------------------------------------
 let g:ctrlp_map = '<c-x>'
 
+function! CreateSpec()
+  let s:main_dir = expand('%:p:h')
+  let s:file_name = expand('%:t:r')
+  let s:test_dir = substitute(s:main_dir, 'src/main/scala', 'src/test/scala', 'y')
+  exec "!mkdir -p " . s:test_dir . ";touch " . s:test_dir . "/" . s:file_name . "Spec.scala"
+endfunction
+
 " Advance
 " :help vimgrep
 " :help mark-motions
