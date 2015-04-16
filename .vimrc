@@ -423,6 +423,10 @@ function! CreateSpec()
   exec "!mkdir -p " . s:test_dir . ";touch " . s:test_dir . "/" . s:file_name . "Spec.scala"
 endfunction
 
+function! GitAdd()
+  exec "!git add %"
+endfunction
+
 " Advance
 " :help vimgrep
 " :help mark-motions
