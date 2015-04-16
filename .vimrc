@@ -285,14 +285,7 @@ Plugin 'thinca/vim-visualstar'
 "--------------------------------------------------
 Plugin 'kana/vim-textobj-user'
 
-" There is il, al, ii, ai, iz and az commands.
-" There is also iI, aI, but I'd not use these commands.
-Plugin 'kana/vim-textobj-line'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-fold'
-
 " There is ys, S, ds and cs commands.
-" I'd not use ys command.
 Plugin 'tpope/vim-surround'
 
 "--------------------------------------------------
