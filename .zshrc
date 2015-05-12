@@ -14,3 +14,21 @@ function prompt-vcs-precmd() {
 
 add-zsh-hook precmd prompt-vcs-precmd
 RPROMPT="[%1v]"
+
+bindkey -e
+
+autoload -U compinit; compinit
+
+setopt auto_cd
+
+setopt auto_pushd
+
+setopt pushd_ignore_dups
+
+setopt hist_ignore_all_dups
+
+setopt hist_ignore_space
+
+zstyle ':completion:*:default' menu select=1
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
