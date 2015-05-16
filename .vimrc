@@ -33,6 +33,7 @@ nnoremap <C-L><C-J> :jumps<CR>
 nnoremap <C-L><C-H> :his<CR>
 nnoremap <C-L><C-U> :undolist<CR>
 nnoremap <C-L><C-E> :edit %:p:h<CR>
+inoremap jk <ESC>
 " }}}
 "--------------------------------------------------
 
