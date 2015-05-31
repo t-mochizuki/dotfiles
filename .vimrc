@@ -18,7 +18,7 @@ set nohidden
 set updatetime=4000
 set ambiwidth=double
 set startofline
-set history=50
+set history=1000
 set keywordprg=:help
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
