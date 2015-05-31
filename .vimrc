@@ -355,6 +355,7 @@ Plugin 'tyru/open-browser.vim'
 Plugin 'kana/vim-smartinput'
 Plugin 'yegappan/mru'
 " Plugin 'justinmk/vim-dirvish'
+Plugin 'tpope/vim-unimpaired.git'
 
 call vundle#end()
 filetype plugin indent on
