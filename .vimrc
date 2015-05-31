@@ -132,8 +132,7 @@ set scrolloff=999
 "
 " :help insert-index
 "
-" CTRL-H, CTRL-D, CTRL-U, CTRL-W
-" CTRL-G CTRL-J, CTRL-G CTRL-K, CTRL-G u
+" ^U, ^W, ^H, ^G^J, ^G^K
 "
 "--------------------------------------------------
 set backspace=indent,eol,start
@@ -179,7 +178,8 @@ set statusline+=%m
 " CTRL-W s : Split current window in two
 " CTRL-W v : Split vertically current window in two
 " CTRL-W c : Close current window
-" CTRL-W o : All other windows are closed
+" CTRL-W o : Close all other windows
+" CTRL-W T : Move the current window to a new tab page
 "
 "--------------------------------------------------
 " }}}
