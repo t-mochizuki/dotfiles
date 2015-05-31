@@ -21,10 +21,6 @@ set startofline
 set history=50
 set keywordprg=:help
 nnoremap <ESC><ESC> :nohlsearch<CR>
-nmap <C-p> :cp<CR>
-nmap <C-n> :cn<CR>
-nmap <C-f> :bp<CR>
-nmap <C-b> :bn<CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
 nnoremap <C-L><C-R> :dis<CR>
 nnoremap <C-L><C-K> :map<CR>
