@@ -105,7 +105,7 @@ set lazyredraw
 "--------------------------------------------------
 set ignorecase
 set smartcase
-set wrapscan
+set nowrapscan
 set incsearch
 set hlsearch
 " }}}
