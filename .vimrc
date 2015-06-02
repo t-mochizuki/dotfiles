@@ -20,7 +20,7 @@ set ambiwidth=double
 set startofline
 set history=1000
 set keywordprg=:help
-nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <C-l> :<C-u>nohlsearch<C-l><CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
 nnoremap <C-L><C-R> :dis<CR>
 nnoremap <C-L><C-K> :map<CR>
