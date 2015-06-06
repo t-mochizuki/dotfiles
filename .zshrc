@@ -1,3 +1,6 @@
+source $HOME/.nvm/nvm.sh
+nvm use 0.12
+
 PROMPT='%~$ '
 
 autoload -U vcs_info add-zsh-hook
