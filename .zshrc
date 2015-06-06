@@ -1,3 +1,5 @@
+PROMPT='%~$ '
+
 autoload -U vcs_info add-zsh-hook
 
 zstyle ':vcs_info:*' enable git
