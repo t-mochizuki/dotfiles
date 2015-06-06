@@ -74,7 +74,7 @@ set foldmethod=marker
 "
 "--------------------------------------------------
 set completeopt=menu,preview
-set complete=.,w,b,u,t,i,k
+set complete+=k
 set omnifunc=
 set completefunc=
 set dictionary=
