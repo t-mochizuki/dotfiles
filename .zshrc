@@ -2,6 +2,9 @@ source $HOME/.nvm/nvm.sh
 nvm use 0.12
 
 PROMPT='%~$ '
+HISTFILE=$HOME/.history
+SAVEHIST=1000
+HISTSIZE=1000
 
 autoload -U vcs_info add-zsh-hook
 
