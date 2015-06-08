@@ -1,10 +1,20 @@
 source $HOME/.nvm/nvm.sh
 nvm use 0.12
 
-PROMPT='%~$ '
+# prompt
+setopt PROMPT_PERCENT
+setopt PROMPT_SUBST
+PROMPT='%h %% '
+RPROMPT='%1v %1~ %D %*'
+
+# history
 HISTFILE=$HOME/.history
 SAVEHIST=1000
 HISTSIZE=1000
+
+setopt NO_BEEP
+setopt AUTO_CD
+setopt NO_CD_ABLE_VARS
 
 autoload -U vcs_info add-zsh-hook
 
@@ -21,7 +31,6 @@ function prompt-vcs-precmd() {
 }
 
 add-zsh-hook precmd prompt-vcs-precmd
-RPROMPT="[%1v]"
 
 bindkey -e
 
