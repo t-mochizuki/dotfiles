@@ -1,5 +1,5 @@
-source $HOME/.nvm/nvm.sh
-nvm use 0.12
+# source $HOME/.nvm/nvm.sh
+# nvm use 0.12
 
 # prompt
 setopt PROMPT_PERCENT
