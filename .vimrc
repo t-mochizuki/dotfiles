@@ -253,11 +253,6 @@ Plugin 'thinca/vim-poslist'
 Plugin 'tmhedberg/matchit'
 
 "--------------------------------------------------
-" Visual selection
-"--------------------------------------------------
-Plugin 'terryma/vim-expand-region'
-
-"--------------------------------------------------
 " Star
 "--------------------------------------------------
 Plugin 'thinca/vim-visualstar'
