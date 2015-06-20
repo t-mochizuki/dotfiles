@@ -115,7 +115,6 @@ set hlsearch
 "--------------------------------------------------
 " Look " {{{
 "--------------------------------------------------
-colorscheme default
 set relativenumber
 set ruler
 set notitle
@@ -337,6 +336,7 @@ Plugin 'kana/vim-smartinput'
 Plugin 'yegappan/mru'
 " Plugin 'justinmk/vim-dirvish'
 Plugin 'tpope/vim-unimpaired.git'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -404,6 +404,10 @@ endfunction
 function! GitAdd()
   exec "!git add %"
 endfunction
+
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Advance
 " :help vimgrep
