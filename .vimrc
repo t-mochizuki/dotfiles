@@ -312,6 +312,8 @@ Plugin 'fatih/vim-go'
 "--------------------------------------------------
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'clausreinke/typescript-tools.vim'
 
 "--------------------------------------------------
 " Scala
@@ -408,6 +410,13 @@ endfunction
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+"--------------------------------------------------
+" TypeScript
+"--------------------------------------------------
+let g:typescript_compiler_options = '-sourcemap'
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " Advance
 " :help vimgrep
