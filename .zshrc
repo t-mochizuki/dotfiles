@@ -4,23 +4,27 @@
 # prompt
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
-PROMPT='%h %% '
-RPROMPT='%1v %1~ %D %*'
+PROMPT='%1~%1v %# '
 
 # history
-HISTFILE=$HOME/.history
+HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=1000
+setopt hist_no_store
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt append_history
+setopt share_history
 
 setopt NO_BEEP
-setopt AUTO_CD
 setopt NO_CD_ABLE_VARS
 
 autoload -U vcs_info add-zsh-hook
 
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats '%s[%b]%u%c'
-zstyle ':vcs_info:*' actionformats '%s[%b|%a]%u%c'
+zstyle ':vcs_info:*' formats '[%b]%u%c'
+zstyle ':vcs_info:*' actionformats '[%b|%a]%u%c'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr '+'
 zstyle ':vcs_info:git:*' unstagedstr '*'
@@ -32,19 +36,23 @@ function prompt-vcs-precmd() {
 
 add-zsh-hook precmd prompt-vcs-precmd
 
+export EDITOR=vim
 bindkey -e
 
-autoload -U compinit; compinit
+autoload -U compinit
+compinit
+autoload -U colors
+colors
 
 setopt auto_cd
 
 setopt auto_pushd
 
+setopt correct
+
+setopt cdable_vars
+
 setopt pushd_ignore_dups
-
-setopt hist_ignore_all_dups
-
-setopt hist_ignore_space
 
 zstyle ':completion:*:default' menu select=1
 
