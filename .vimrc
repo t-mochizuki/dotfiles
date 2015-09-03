@@ -20,6 +20,8 @@ set ambiwidth=double
 set startofline
 set history=1000
 set keywordprg=:help
+set path+=**
+set suffixesadd+=.scala,.coffee,.html
 nnoremap <C-l> :<C-u>nohlsearch<C-l><CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
 nnoremap <C-L><C-R> :dis<CR>
@@ -244,11 +246,21 @@ Plugin 'L9'
 " Filer
 "--------------------------------------------------
 Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'nixprime/cpsm'
+
+"--------------------------------------------------
+" Colorscheme
+"--------------------------------------------------
+Plugin 'altercation/vim-colors-solarized'
+
+"--------------------------------------------------
+" Pairs of handy bracket mappings
+"--------------------------------------------------
+Plugin 'tpope/vim-unimpaired.git'
 
 "--------------------------------------------------
 " Cursor
 "--------------------------------------------------
-Plugin 'thinca/vim-poslist'
 Plugin 'tmhedberg/matchit'
 
 "--------------------------------------------------
@@ -276,9 +288,24 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 
 "--------------------------------------------------
+" Align
+"--------------------------------------------------
+" :Tab /=
+" :Tab /:
+" :Tab /|
+Plugin 'godlygeek/tabular'
+
+"--------------------------------------------------
 " HTML coding
 "--------------------------------------------------
 Plugin 'mattn/emmet-vim'
+
+"--------------------------------------------------
+" Markdown
+"--------------------------------------------------
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kannokanno/previm'
+Plugin 'tyru/open-browser.vim'
 
 "--------------------------------------------------
 " Syntax checker
@@ -296,11 +323,14 @@ Plugin 'rking/ag.vim'
 Plugin 'gtags.vim'
 
 "--------------------------------------------------
+" integrate git with Vim
+"--------------------------------------------------
+Plugin 'tpope/vim-fugitive'
+
+"--------------------------------------------------
 " Ruby
 "--------------------------------------------------
 Plugin 'ruby.vim'
-Plugin 'rails.vim'
-Plugin 'tpope/vim-rails'
 
 "--------------------------------------------------
 " Golang
@@ -313,6 +343,7 @@ Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'clausreinke/typescript-tools.vim'
 
 "--------------------------------------------------
@@ -329,16 +360,8 @@ Plugin 'ref.vim'
 "--------------------------------------------------
 " Utility
 "--------------------------------------------------
-Plugin 'tyru/capture.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'kannokanno/previm'
-Plugin 'tyru/open-browser.vim'
 Plugin 'kana/vim-smartinput'
 Plugin 'yegappan/mru'
-" Plugin 'justinmk/vim-dirvish'
-Plugin 'tpope/vim-unimpaired.git'
-Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -347,13 +370,9 @@ syntax on
 "--------------------------------------------------
 " Gtags
 "--------------------------------------------------
-
-"--------------------------------------------------
-" Poslist
-"--------------------------------------------------
-nmap <C-i> <Plug>(poslist-prev-pos)
-nmap <C-o> <Plug>(poslist-next-pos)
-let g:poslist_histsize = 1000
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
 
 "--------------------------------------------------
 " Tagbar
@@ -396,17 +415,9 @@ endif
 "--------------------------------------------------
 let g:ctrlp_map = '<c-x>'
 
-function! CreateSpec()
-  let s:main_dir = expand('%:p:h')
-  let s:file_name = expand('%:t:r')
-  let s:test_dir = substitute(s:main_dir, 'src/main/scala', 'src/test/scala', 'y')
-  exec "!mkdir -p " . s:test_dir . ";touch " . s:test_dir . "/" . s:file_name . "Spec.scala"
-endfunction
-
-function! GitAdd()
-  exec "!git add %"
-endfunction
-
+"--------------------------------------------------
+" Colorscheme
+"--------------------------------------------------
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
