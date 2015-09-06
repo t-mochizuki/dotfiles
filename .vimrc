@@ -138,14 +138,14 @@ set scrolloff=999
 "--------------------------------------------------
 set backspace=indent,eol,start
 set virtualedit=block
-function! CleverTab()
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-N>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
+" function! CleverTab()
+"   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+"     return "\<Tab>"
+"   else
+"     return "\<C-N>"
+"   endif
+" endfunction
+" inoremap <Tab> <C-R>=CleverTab()<CR>
 " }}}
 "--------------------------------------------------
 
@@ -301,6 +301,19 @@ Plugin 'godlygeek/tabular'
 Plugin 'mattn/emmet-vim'
 
 "--------------------------------------------------
+" Snippets
+"--------------------------------------------------
+" Plugin 'SirVer/ultisnips'
+" <C-R><Tab>
+" <Tab>
+" <S-Tab>
+" <CR>
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+"--------------------------------------------------
 " Markdown
 "--------------------------------------------------
 Plugin 'plasticboy/vim-markdown'
@@ -438,3 +451,4 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " :help vimgrep
 " :help mark-motions
 " :help compiler
+" :help complex-repeat
