@@ -303,14 +303,11 @@ Plugin 'mattn/emmet-vim'
 "--------------------------------------------------
 " Snippets
 "--------------------------------------------------
-" Plugin 'SirVer/ultisnips'
 " <C-R><Tab>
 " <Tab>
-" <S-Tab>
-" <CR>
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" <C-J>
+" <C-K>
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 "--------------------------------------------------
@@ -388,9 +385,9 @@ let g:netrw_liststyle = 3
 "--------------------------------------------------
 " Gtags
 "--------------------------------------------------
-map <C-g> :Gtags
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
+" map <C-g> :Gtags
+" map <C-h> :Gtags -f %<CR>
+" map <C-j> :GtagsCursor<CR>
 
 "--------------------------------------------------
 " Tagbar
@@ -431,7 +428,7 @@ endif
 "--------------------------------------------------
 " CtrlP
 "--------------------------------------------------
-let g:ctrlp_map = '<c-x>'
+" let g:ctrlp_map = '<c-x>'
 
 "--------------------------------------------------
 " Colorscheme
@@ -446,6 +443,11 @@ colorscheme solarized
 let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+"--------------------------------------------------
+" UltiSnips
+"--------------------------------------------------
+let g:UltiSnipsListSnippets = '<c-r><tab>'
 
 " Advance
 " :help vimgrep
