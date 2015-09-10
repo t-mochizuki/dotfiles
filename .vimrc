@@ -243,12 +243,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'L9'
 
 "--------------------------------------------------
-" Filer
-"--------------------------------------------------
-Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'nixprime/cpsm'
-
-"--------------------------------------------------
 " Colorscheme
 "--------------------------------------------------
 Plugin 'altercation/vim-colors-solarized'
@@ -275,11 +269,6 @@ Plugin 'kana/vim-textobj-user'
 
 " There is ys, S, ds and cs commands.
 Plugin 'tpope/vim-surround'
-
-"--------------------------------------------------
-" Outline
-"--------------------------------------------------
-Plugin 'majutsushi/tagbar'
 
 "--------------------------------------------------
 " Comment out
@@ -378,33 +367,9 @@ filetype plugin indent on
 syntax on
 
 "--------------------------------------------------
-" Netrw
-"--------------------------------------------------
-let g:netrw_liststyle = 3
-
-"--------------------------------------------------
 " Gtags
 "--------------------------------------------------
-" map <C-g> :Gtags
-" map <C-h> :Gtags -f %<CR>
-" map <C-j> :GtagsCursor<CR>
-
-"--------------------------------------------------
-" Tagbar
-"--------------------------------------------------
-nnoremap <Space>t :TagbarToggle<CR>
-let g:tagbar_width = 30
-let g:tagbar_sort = 0
-
-let g:tagbar_type_javascript = {
-    \ 'ctagstype' : 'js',
-    \ 'kinds'     : [
-        \ 'o:objects',
-        \ 'f:functions',
-        \ 'a:arrays',
-        \ 's:strings'
-    \ ]
-\ }
+let g:Gtags_Auto_Map=1
 
 "--------------------------------------------------
 " Ag
@@ -424,11 +389,6 @@ endif
 if $GOPATH != ''
   let g:go_bin_path = expand("$GOPATH/bin")
 endif
-
-"--------------------------------------------------
-" CtrlP
-"--------------------------------------------------
-" let g:ctrlp_map = '<c-x>'
 
 "--------------------------------------------------
 " Colorscheme
