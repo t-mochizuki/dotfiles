@@ -336,8 +336,6 @@ Plugin 'fatih/vim-go'
 "--------------------------------------------------
 " JavaScript
 "--------------------------------------------------
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'clausreinke/typescript-tools.vim'
