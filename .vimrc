@@ -20,8 +20,7 @@ set ambiwidth=double
 set startofline
 set history=1000
 set keywordprg=:help
-set path+=**
-set suffixesadd+=.scala,.coffee,.html
+set path=**
 nnoremap <C-l> :<C-u>nohlsearch<C-l><CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
 nnoremap <C-L><C-R> :dis<CR>
@@ -219,6 +218,9 @@ augroup vimrc
 augroup END
 
 autocmd vimrc FileType c,cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd vimrc FileType scala setlocal suffixesadd+=.scala
+autocmd vimrc FileType html setlocal suffixesadd+=.html
+autocmd vimrc FileType typescript setlocal suffixesadd+=.ts
 " }}}
 "--------------------------------------------------
 
