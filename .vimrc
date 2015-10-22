@@ -43,6 +43,7 @@ nnoremap <C-L><C-E> :edit %:p:h<CR>
 " CTRL-O, CTRL-I
 "
 "--------------------------------------------------
+runtime macros/matchit.vim
 " }}}
 "--------------------------------------------------
 
@@ -250,11 +251,6 @@ Plugin 'altercation/vim-colors-solarized'
 " Pairs of handy bracket mappings
 "--------------------------------------------------
 Plugin 'tpope/vim-unimpaired.git'
-
-"--------------------------------------------------
-" Cursor
-"--------------------------------------------------
-Plugin 'tmhedberg/matchit'
 
 "--------------------------------------------------
 " Star
