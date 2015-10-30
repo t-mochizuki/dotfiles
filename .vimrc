@@ -165,16 +165,6 @@ set expandtab
 "--------------------------------------------------
 set cmdheight=2
 set laststatus=2
-set statusline=[%n]
-set statusline+=%<%F
-set statusline+=%r
-set statusline+=%h
-set statusline+=%w
-set statusline+=[%{&fileformat}]
-set statusline+=[%{has('multi_byte')&&\&fileencoding!=''?&fileencoding:&encoding}]
-set statusline+=%y
-set statusline+=[LINE=%l/%L][COLUMN=%c/%{col('$')-1}][%p%%]
-set statusline+=%m
 " }}}
 "--------------------------------------------------
 
@@ -270,6 +260,11 @@ Plugin 'tpope/vim-surround'
 "--------------------------------------------------
 " I will use gc command with {count}{motion}.
 Plugin 'tomtom/tcomment_vim'
+
+"--------------------------------------------------
+" statusline/tabline
+"--------------------------------------------------
+Plugin 'itchyny/lightline.vim'
 
 "--------------------------------------------------
 " Align
@@ -386,9 +381,28 @@ endif
 "--------------------------------------------------
 " Colorscheme
 "--------------------------------------------------
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"""}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
 
 "--------------------------------------------------
 " TypeScript
