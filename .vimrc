@@ -29,7 +29,7 @@ nnoremap <C-L><C-M> :marks<CR>
 nnoremap <C-L><C-J> :jumps<CR>
 nnoremap <C-L><C-H> :his<CR>
 nnoremap <C-L><C-U> :undolist<CR>
-nnoremap <C-L><C-E> :edit %:p:h<CR>
+nnoremap <C-L><C-E> :Dirvish %:p:h<CR>
 " }}}
 "--------------------------------------------------
 
@@ -231,6 +231,11 @@ Plugin 'gmarik/Vundle.vim'
 " Library
 "--------------------------------------------------
 Plugin 'L9'
+
+"--------------------------------------------------
+" Filer
+"--------------------------------------------------
+Plugin 'justinmk/vim-dirvish'
 
 "--------------------------------------------------
 " Colorscheme
