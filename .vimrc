@@ -337,7 +337,7 @@ Plugin 'clausreinke/typescript-tools.vim'
 " Scala
 "--------------------------------------------------
 Plugin 'derekwyatt/vim-scala'
-Plugin 'ktvoelker/sbt-vim'
+Plugin 'derekwyatt/vim-sbt'
 
 "--------------------------------------------------
 " Reference
