@@ -225,7 +225,7 @@ call vundle#begin()
 "--------------------------------------------------
 " Plugin manager
 "--------------------------------------------------
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "--------------------------------------------------
 " Library
