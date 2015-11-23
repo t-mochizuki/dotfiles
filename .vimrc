@@ -337,6 +337,7 @@ Plugin 'clausreinke/typescript-tools.vim'
 " Scala
 "--------------------------------------------------
 Plugin 'derekwyatt/vim-scala'
+Plugin 'majutsushi/tagbar'
 Plugin 'derekwyatt/vim-sbt'
 
 "--------------------------------------------------
@@ -403,6 +404,11 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+
+"--------------------------------------------------
+" Scala
+"--------------------------------------------------
+let g:scala_use_builtin_tagbar_defs = 0
 
 "--------------------------------------------------
 " TypeScript
