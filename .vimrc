@@ -382,11 +382,9 @@ endif
 "--------------------------------------------------
 " Colorscheme
 "--------------------------------------------------
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme elflord
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
