@@ -223,5 +223,23 @@ else
     make PREFIX=$HOME/redis install)
 fi
 
+if [ -e ~/cmake ]; then
+  :
+else
+  echo 'cmake'
+  (cd $WORK; \
+    curl https://cmake.org/files/v3.4/cmake-3.4.0.tar.gz -o cmake-3.4.0.tar.gz; \
+    declare hash=`shasum -a 256 cmake-3.4.0.tar.gz`; \
+    if [ $hash != 'a5b82bf6ace6c481cdb911fd5d372a302740cbefd387e05297cb37f7468d1cea' ]; then \
+      echo '[cmake] irregular hash'; \
+      exit 1; \
+    fi; \
+    tar zxf cmake-3.4.0.tar.gz; \
+    cd cmake-3.4.0; \
+    ./configure --prefix=$HOME/cmake; \
+    make; \
+    make install)
+fi
+
 echo 'end'
 
