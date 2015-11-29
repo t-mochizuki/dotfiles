@@ -211,5 +211,17 @@ else
   sudo ln -s ~/vim/bin/vim $BIN
 fi
 
+if [ -e ~/redis ]; then
+  :
+else
+  echo 'redis'
+  (cd $WORK; \
+    curl http://download.redis.io/releases/redis-3.0.5.tar.gz -o redis-3.0.5.tar.gz; \
+    tar zxf redis-3.0.5.tar.gz; \
+    cd redis-3.0.5; \
+    make; \
+    make PREFIX=$HOME/redis install)
+fi
+
 echo 'end'
 
