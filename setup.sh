@@ -237,8 +237,38 @@ else
     tar zxf cmake-3.4.0.tar.gz; \
     cd cmake-3.4.0; \
     ./configure --prefix=$HOME/cmake; \
-    make; \
-    make install)
+    make && make install)
+  sudo ln -fs $HOME/cmake/bin/* /usr/local/bin
+fi
+
+if [ -e ~/mysql ]; then
+  :
+else
+  echo 'mysql'
+  (cd $WORK; \
+    # curl http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.9.tar.gz -Lo mysql-5.7.9.tar.gz; \
+    declare hash=`md5 mysql-5.7.9.tar.gz | cut -d ' ' -f 4`; \
+    if [ $hash != '6d782dda9046acb81e694934fd513993' ]; then \
+      echo '[mysql] irregular hash'; \
+      exit 1; \
+    fi; \
+    tar zxf mysql-5.7.9.tar.gz; \
+    cd mysql-5.7.9; \
+    cmake . -DCMAKE_INSTALL_PREFIX=$HOME/mysql \
+            -DDEFAULT_CHARSET=utf8 \
+            -DDEFAULT_COLLATION=utf8_general_ci \
+            -DMYSQL_DATADIR=$HOME/mysql/var/mysql \
+            -DMYSQL_UNIX_ADDR=$HOME/mysql/tmp/mysql.sock \
+            -DSYSCONFDIR=$HOME/mysql/etc \
+            -DTMPDIR=$HOME/mysql/tmp \
+            -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+            -DDOWNLOAD_BOOST=1 \
+            -DWITH_BOOST=$HOME/boost; \
+    make && make install)
+  mkdir -p $HOME/var/mysql
+  mkdir $HOME/tmp
+  mkdir $HOME/etc
+  sudo ln -fs $HOME/mysql/bin/* /usr/local/bin
 fi
 
 echo 'end'
