@@ -271,5 +271,18 @@ else
   sudo ln -fs $HOME/mysql/bin/* /usr/local/bin
 fi
 
+# rm -rf $HOME/mysql/var
+# rm -rf $HOME/mysql/tmp
+# rm -rf $HOME/mysql/etc
+# mkdir -p $HOME/mysql/var/mysql
+# mkdir $HOME/mysql/tmp
+# mkdir $HOME/mysql/etc
+# cp $HOME/mysql/support-files/my-default.cnf $HOME/mysql/etc/my.cnf
+# mysqld --initialize
+# mysqld &
+# mysql -uroot -p
+# set password for root@localhost=password('newpassword');
+# mysqladmin -u root -p shutdown
+
 echo 'end'
 
