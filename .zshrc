@@ -36,7 +36,6 @@ function prompt-vcs-precmd() {
 
 add-zsh-hook precmd prompt-vcs-precmd
 
-export EDITOR=vim
 bindkey -e
 
 autoload -U compinit
