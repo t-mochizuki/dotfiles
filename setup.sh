@@ -284,5 +284,17 @@ fi
 # set password for root@localhost=password('newpassword');
 # mysqladmin -u root -p shutdown
 
+if [ -e ~/.pyenv ]; then
+  :
+else
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+fi
+
+if [ -e ~/.pyenv/plugins/pyenv-virtualenv ]; then
+  :
+else
+  git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+fi
+
 echo 'end'
 
