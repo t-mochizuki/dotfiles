@@ -296,5 +296,19 @@ else
   git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
+if [ -e ~/jq ]; then
+  :
+else
+  echo 'jq'
+  (cd $WORK; \
+   curl https://github.com/stedolan/jq/releases/download/jq-1.5/jq-1.5.tar.gz -Lo jq-1.5.tar.gz; \
+   tar zxf jq-1.5.tar.gz; \
+   cd jq-1.5; \
+   autoreconf -i; \
+   ./configure --prefix=$HOME/jq --disable-maintainer-mode; \
+   make; \
+   make install)
+fi
+
 echo 'end'
 
