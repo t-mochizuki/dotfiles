@@ -233,6 +233,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'L9'
 
 "--------------------------------------------------
+" Filer
+"--------------------------------------------------
+Plugin 'ctrlpvim/ctrlp.vim'
+
+"--------------------------------------------------
 " Colorscheme
 "--------------------------------------------------
 Plugin 'altercation/vim-colors-solarized'
@@ -302,11 +307,6 @@ Plugin 'tyru/open-browser.vim'
 Plugin 'scrooloose/syntastic'
 
 "--------------------------------------------------
-" integrate ag with Vim
-"--------------------------------------------------
-Plugin 'rking/ag.vim'
-
-"--------------------------------------------------
 " integrate GNU GLOBAL with Vim
 "--------------------------------------------------
 Plugin 'gtags.vim'
@@ -354,19 +354,6 @@ Plugin 'yegappan/mru'
 call vundle#end()
 filetype plugin indent on
 syntax on
-
-"--------------------------------------------------
-" Gtags
-"--------------------------------------------------
-let g:Gtags_Auto_Map=1
-
-"--------------------------------------------------
-" Ag
-"--------------------------------------------------
-let g:agprg="ag --column --all-text --smart-case"
-let g:aghighlight=0
-let g:ag_lhandler="botright lopen 5"
-let g:ag_qhandler="botright copen 5"
 
 "--------------------------------------------------
 " Golang
