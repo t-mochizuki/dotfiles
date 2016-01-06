@@ -1,0 +1,7 @@
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[user]
+	name = Mochizuki Takamasa
+	email = t-mochizuki@users.noreply.github.com
+[push]
+	default = current
