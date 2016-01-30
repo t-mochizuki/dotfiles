@@ -13,6 +13,7 @@ set nocompatible
 set modeline
 set modelines=1
 set nobackup
+set noswapfile
 set noautoread
 set nohidden
 set updatetime=4000
@@ -354,6 +355,12 @@ Plugin 'yegappan/mru'
 call vundle#end()
 filetype plugin indent on
 syntax on
+
+"--------------------------------------------------
+" CtrlP
+"--------------------------------------------------
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 "--------------------------------------------------
 " Golang
