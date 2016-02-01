@@ -376,7 +376,9 @@ endif
 "--------------------------------------------------
 " Colorscheme
 "--------------------------------------------------
-colorscheme elflord
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
