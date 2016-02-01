@@ -21,6 +21,7 @@ set ambiwidth=double
 set startofline
 set history=1000
 set keywordprg=:help
+set isfname-=.
 set path=**
 nnoremap <C-l> :<C-u>nohlsearch<C-l><CR>
 nnoremap <C-L><C-L> :ls<CR>:b 
