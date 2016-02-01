@@ -211,9 +211,7 @@ augroup vimrc
 augroup END
 
 autocmd vimrc FileType c,cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-autocmd vimrc FileType scala setlocal suffixesadd+=.scala
-autocmd vimrc FileType html setlocal suffixesadd+=.html
-autocmd vimrc FileType typescript setlocal suffixesadd+=.ts
+autocmd vimrc QuickFixCmdPost *grep* cwindow
 " }}}
 "--------------------------------------------------
 
