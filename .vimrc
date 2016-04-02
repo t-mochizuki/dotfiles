@@ -272,27 +272,9 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'itchyny/lightline.vim'
 
 "--------------------------------------------------
-" Align
-"--------------------------------------------------
-" :Tab /=
-" :Tab /:
-" :Tab /|
-Plugin 'godlygeek/tabular'
-
-"--------------------------------------------------
 " HTML coding
 "--------------------------------------------------
 Plugin 'mattn/emmet-vim'
-
-"--------------------------------------------------
-" Snippets
-"--------------------------------------------------
-" <C-R><Tab>
-" <Tab>
-" <C-J>
-" <C-K>
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 
 "--------------------------------------------------
 " Markdown
@@ -331,25 +313,17 @@ Plugin 'fatih/vim-go'
 "--------------------------------------------------
 Plugin 'leafgarland/typescript-vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'clausreinke/typescript-tools.vim'
 
 "--------------------------------------------------
 " Scala
 "--------------------------------------------------
 Plugin 'derekwyatt/vim-scala'
-Plugin 'majutsushi/tagbar'
 Plugin 'derekwyatt/vim-sbt'
-
-"--------------------------------------------------
-" Reference
-"--------------------------------------------------
-Plugin 'ref.vim'
 
 "--------------------------------------------------
 " Utility
 "--------------------------------------------------
 Plugin 'kana/vim-smartinput'
-Plugin 'yegappan/mru'
 
 call vundle#end()
 filetype plugin indent on
@@ -360,17 +334,6 @@ syntax on
 "--------------------------------------------------
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-
-"--------------------------------------------------
-" Golang
-"--------------------------------------------------
-if $GOROOT != ''
-  set rtp+=$GOROOT/misc/vim
-endif
-
-if $GOPATH != ''
-  let g:go_bin_path = expand("$GOPATH/bin")
-endif
 
 "--------------------------------------------------
 " Colorscheme
@@ -397,23 +360,6 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
-
-"--------------------------------------------------
-" Scala
-"--------------------------------------------------
-let g:scala_use_builtin_tagbar_defs = 0
-
-"--------------------------------------------------
-" TypeScript
-"--------------------------------------------------
-let g:typescript_compiler_options = '-sourcemap'
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
-"--------------------------------------------------
-" UltiSnips
-"--------------------------------------------------
-let g:UltiSnipsListSnippets = '<c-r><tab>'
 
 " Advance
 " :help vimgrep
