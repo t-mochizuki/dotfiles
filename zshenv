@@ -15,3 +15,5 @@ eval "$(jenv init -)"
 export JAVA_OPTS="-Xmx2G -Xss1M"
 
 alias vi="$HOME/vim-8.2.1512/bin/vim"
+
+alias sbt="$HOME/sbt-1.3.13/bin/sbt"
