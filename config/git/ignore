@@ -1,0 +1,6 @@
+metals.sbt
+.metals/
+.bloop/
+vendor/
+.lsp/
+.terraform
