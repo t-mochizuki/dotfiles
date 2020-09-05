@@ -1,9 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/tcomment_vim'
