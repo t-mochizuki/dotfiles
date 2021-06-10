@@ -26,7 +26,8 @@ if [[ ! -f ~/tmp/sbt-1.5.3/sbt-1.5.3.tgz ]]; then
 https://github.com/sbt/sbt/releases/download/v1.5.3/sbt-1.5.3.tgz
 fi
 
-if [[ -f ~/tmp/sbt-1.5.3/sbt-1.5.3.tgz ]]; then
+if [[ ! -d ~/tmp/sbt-1.5.3/sbt ]]; then
+	echo 'extract sbt zip file'
 	cd ~/tmp/sbt-1.5.3
 	tar -xf ~/tmp/sbt-1.5.3/sbt-1.5.3.tgz
 	cd -
