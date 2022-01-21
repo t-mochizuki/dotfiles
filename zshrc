@@ -7,8 +7,10 @@ bindkey -e
 
 # history
 export HISTFILE=~/.zhistory
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=100000
+export SAVEHIST=100000
+setopt extended_history
+setopt share_history
 setopt hist_save_no_dups
 setopt hist_no_store
 setopt hist_ignore_space
