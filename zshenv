@@ -23,6 +23,11 @@ if [[ -d ~/.tfenv ]]; then
 	export PATH="$TFENV_ROOT/bin:$PATH"
 fi
 
+if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh && -f /usr/local/opt/chruby/share/chruby/auto.sh ]]; then
+	source /usr/local/opt/chruby/share/chruby/chruby.sh
+	source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
 export JAVA_OPTS="-Xmx2G -Xss1M"
 
 alias vi="$HOME/vim-8.2.1512/bin/vim"
