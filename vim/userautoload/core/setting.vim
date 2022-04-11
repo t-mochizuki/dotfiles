@@ -47,3 +47,4 @@ set dictionary=
 set omnifunc= " default
 " CTRL-X CTRL-U
 set completefunc= " default
+set regexpengine=0 " default
