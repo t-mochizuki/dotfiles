@@ -45,7 +45,7 @@ fi
 
 if [[ ! -f ~/.gitconfig ]]; then
 	echo 'put .gitconfig in my home directory'
-	cp gitconfig ~/.gitconfig
+	ln gitconfig ~/.gitconfig
 fi
 
 if [[ ! -d ~/.config/git/ ]]; then
@@ -54,17 +54,17 @@ fi
 
 if [[ ! -f ~/.config/git/ignore ]]; then
 	echo 'put .config/git/ignore in my home directory'
-	cp config/git/ignore ~/.config/git/ignore
+	ln config/git/ignore ~/.config/git/ignore
 fi
 
 if [[ ! -f ~/.zshenv ]]; then
 	echo 'put .zshenv in my home directory'
-	cp zshenv ~/.zshenv
+	ln zshenv ~/.zshenv
 fi
 
 if [[ ! -f ~/.zshrc ]]; then
 	echo 'put .zshrc in my home directory'
-	cp zshrc ~/.zshrc
+	ln zshrc ~/.zshrc
 fi
 
 if [[ ! -d ~/.vim/autoload/ ]]; then
@@ -79,7 +79,7 @@ fi
 
 if [[ ! -f ~/.vimrc ]]; then
 	echo 'put .vimrc in my home directory'
-	cp vimrc ~/.vimrc
+	ln vimrc ~/.vimrc
 fi
 
 if [[ ! -d ~/.vim/userautoload/ ]]; then
