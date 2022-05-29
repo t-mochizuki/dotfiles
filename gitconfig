@@ -16,7 +16,7 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
-	s = status
+	s = status -uno
 	b = branch
 	ch = checkout
 	l = log

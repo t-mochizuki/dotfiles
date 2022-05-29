@@ -48,3 +48,5 @@ set omnifunc= " default
 " CTRL-X CTRL-U
 set completefunc= " default
 set regexpengine=0 " default
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
