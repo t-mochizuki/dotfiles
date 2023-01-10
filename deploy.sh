@@ -43,11 +43,6 @@ if [[ ! -d ~/.tfenv ]]; then
 	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 fi
 
-if [[ ! -f ~/.gitconfig ]]; then
-	echo 'put .gitconfig in my home directory'
-	ln gitconfig ~/.gitconfig
-fi
-
 if [[ ! -d ~/.config/git/ ]]; then
 	mkdir -p ~/.config/git/
 fi
